@@ -20,7 +20,8 @@ return [
     ],
 
     'mandrill' => [
-        'secret' => '',
+        'secret' => env('MANDRILL_KEY', ''),
+        'webhook' => env('MANDRILL_WEBHOOK', '')
     ],
 
     'ses' => [

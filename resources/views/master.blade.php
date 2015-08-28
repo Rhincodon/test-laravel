@@ -8,12 +8,13 @@
     <meta name="author" content="Eugene Mamonov">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.5,maximum-scale=2,user-scalable=yes">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/app.css">
     <script src="assets/js/vendor/modernizr/modernizr.min.js" async></script>
 </head>
 <body>
 
     @yield('content')
 
+    <script src="assets/js/app.js"></script>
 </body>
 </html>

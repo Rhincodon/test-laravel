@@ -12,3 +12,6 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+
+Route::get('/mandrill-web-hook', 'MandrillWebHookController@saveHook');
+Route::post('/mandrill-web-hook', 'MandrillWebHookController@handleData');

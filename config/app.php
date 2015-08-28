@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'EET',
 
     /*
     |--------------------------------------------------------------------------
@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Illuminate\Html\HtmlServiceProvider::class,
+        Laracasts\Generators\GeneratorsServiceProvider::class,
 
         /*
          * Application Service Providers...
