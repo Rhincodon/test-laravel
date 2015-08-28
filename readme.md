@@ -1,6 +1,6 @@
 # Laravel 101 Template
 
-Поехали!
+РџРѕРµС…Р°Р»Рё!
 
 ## Laravel PHP Framework
 
