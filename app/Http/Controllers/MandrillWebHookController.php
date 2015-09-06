@@ -6,9 +6,9 @@ use Log;
 use Config;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Routing\Controller;
 
-class MandrillWebHookController extends BaseController
+class MandrillWebHookController extends Controller
 {
 
     // Current $_POST[$key] with event data
@@ -40,7 +40,7 @@ class MandrillWebHookController extends BaseController
             Log::info('Mandrill Event' . ' + ' . $post_data);
             return response('', 200);
         } else {
-            return response('Invalid signature', 401);
+            return response('Invalid signature', 403);
         }
 
     }

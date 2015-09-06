@@ -11,7 +11,26 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
 
-Route::get('/mandrill-web-hook', 'MandrillWebHookController@saveHook');
-Route::post('/mandrill-web-hook', 'MandrillWebHookController@handleData');
+Route::get('mandrill-web-hook', 'MandrillWebHookController@saveHook');
+Route::post('mandrill-web-hook', 'MandrillWebHookController@handleData');
+
+Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function() {
+
+    Route::get('login', 'AuthController@getLogin');
+    Route::post('login', 'AuthController@postLogin');
+    Route::get('register', 'AuthController@getRegister');
+    Route::post('register', 'AuthController@postRegister');
+    Route::get('logout', 'AuthController@getLogout');
+
+});
+
+Route::group(['prefix' => 'password', 'namespace' => 'Auth'], function() {
+
+    Route::get('email', 'PasswordController@getEmail');
+    Route::post('email', 'PasswordController@postEmail');
+    Route::get('reset/{token}', 'PasswordController@getReset');
+    Route::post('reset', 'PasswordController@postReset');
+
+});

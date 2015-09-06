@@ -14,6 +14,6 @@ var elixir = require('laravel-elixir');
 elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
-    mix.sass('app.scss', 'public/assets/css');
-    mix.scripts(['app.js'], 'public/assets/js');
+    mix.sass('app.scss', 'public/assets/css/app.css');
+    mix.scripts(['app.js'], 'public/assets/js/app.js');
 });

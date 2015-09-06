@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->truncate();
         DB::table('users')->insert([
             'name'     => 'admin',
-            'email'    => 'admin@localhost',
+            'email'    => 'admin@ubuntu.local',
             'password' => bcrypt('pass'),
         ]);
     }
