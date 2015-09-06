@@ -1,15 +1,34 @@
-{!! Form::open(['url' => '/auth/register']) !!}
-{!! Form::label('name', 'Your Name') !!}
-{!! Form::text('name', null, ['placeholder'=>'Name']) !!}
-<br>
-{!! Form::label('Your E-mail Address') !!}
-{!! Form::text('email', null, ['placeholder'=>'Email Address']) !!}
-<br>
-{!! Form::label('Your Password') !!}
-{!! Form::password('password', ['placeholder'=>'Password']) !!}
-<br>
-{!! Form::label('Confirm Password') !!}
-{!! Form::password('password_confirmation', ['placeholder'=>'Confirm Password']) !!}
-<br>
-{!! Form::submit('Create My Account!') !!}
-{!! Form::close() !!}
+@extends('master')
+
+@include('errors')
+
+@section('content')
+<div class="center-absolute auth-block">
+    <h1 class="text-center">Register</h1>
+
+    {!! Form::open(['url' => 'auth/register', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
+
+    <div class="form-group">
+        {!! Form::text('name', null, ['required', 'placeholder'=>'Name', 'class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::text('email', null, ['required', 'placeholder'=>'Email Address', 'class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::password('password', ['required', 'placeholder'=>'Password', 'class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::password('password_confirmation', ['required', 'placeholder'=>'Confirm Password', 'class' => 'form-control']) !!}
+    </div>
+
+    <div class="form-group">
+        {!! Form::submit('Create Account', ['class' => 'btn btn-default btn-block']) !!}
+    </div>
+
+    {!! Form::close() !!}
+
+</div>
+@endsection

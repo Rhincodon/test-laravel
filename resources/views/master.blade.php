@@ -8,13 +8,16 @@
     <meta name="author" content="Eugene Mamonov">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.5,maximum-scale=2,user-scalable=yes">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    {!! Html::style('assets/css/app.css') !!}
     {!! Html::script('assets/js/vendor/modernizr/modernizr.min.js', ['async']) !!}
+    {!! Html::style('assets/css/vendor/bootstrap/bootstrap.min.css') !!}
+    {!! Html::style('assets/css/app.css') !!}
 </head>
 <body>
 
     @yield('content')
 
+    {!! Html::script('assets/js/vendor/jquery/jquery.min.js') !!}
+    {!! Html::script('assets/js/vendor/bootstrap/bootstrap.min.js') !!}
     {!! Html::script('assets/js/app.js') !!}
 </body>
 </html>
