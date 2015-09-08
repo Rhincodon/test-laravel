@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class Authenticate
+class Root
 {
     /**
      * The Guard implementation.
@@ -34,14 +34,14 @@ class Authenticate
      */
     public function handle($request, Closure $next)
     {
-        if ($this->auth->guest()) {
-            if ($request->ajax()) {
-                return response('Unauthorized', 401);
-            } else {
-                return redirect()->guest('auth/login');
-            }
+        if($this->auth->check() && $this->auth->user()->is_root) {
+            return $next($request);
         }
 
-        return $next($request);
+        if ($request->ajax()) {
+            return response('Unauthorized', 401);
+        } else {
+            abort(401);
+        }
     }
 }

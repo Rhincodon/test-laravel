@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="container content">
-        <h1 class="text-center">Service Unavailable</h1>
+        <h1 class="text-center">Unauthorized</h1>
     </div>
 @endsection

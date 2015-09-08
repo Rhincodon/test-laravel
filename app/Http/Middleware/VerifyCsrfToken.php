@@ -14,4 +14,13 @@ class VerifyCsrfToken extends BaseVerifier
     protected $except = [
         'mandrill-web-hook'
     ];
+
+    protected function tokensMatch($request)
+    {
+        if ($request->wantsJson()) {
+            return true;
+        }
+        return parent::tokensMatch($request);
+    }
+
 }

@@ -34,3 +34,7 @@ Route::group(['prefix' => 'password', 'namespace' => 'Auth'], function() {
     Route::post('reset', 'PasswordController@postReset');
 
 });
+
+Route::group(['prefix' => 'admin', 'middleware' => 'root'], function() {
+    Route::resource('user', 'UserController');
+});
