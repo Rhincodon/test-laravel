@@ -25,8 +25,7 @@ class UserRequest extends Request
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email',
-            'is_root' => 'boolean'
+            'email' => 'required|email'
         ];
     }
 }

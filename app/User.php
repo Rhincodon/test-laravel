@@ -32,4 +32,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public static function boot() {
+        parent::boot();
+
+        static::creating(function($user) {
+            $user->password = bcrypt($user->password);
+        });
+
+        static::saving(function($user) {
+            $user->is_root = $user->is_root === 'on';
+        });
+    }
+
 }

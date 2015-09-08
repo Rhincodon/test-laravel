@@ -46,10 +46,6 @@ class UserController extends Controller
      */
     public function store(UserRequest $request, User $user)
     {
-        if(!$request->has('is_root')) {
-            $request->merge(['is_root' => 0]);
-        }
-        $request->merge(['password' => bcrypt($request->input('password'))]);
         $user->create($request->all());
 
         if (Request::wantsJson()) {
@@ -94,9 +90,6 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
-        if(!$request->has('is_root')){
-            $request->merge(['is_root' => 0]);
-        }
         $user->update($request->all());
 
         if (Request::wantsJson()) {
